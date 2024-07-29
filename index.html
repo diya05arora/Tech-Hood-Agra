@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <script src="https://unpkg.com/gsap@3.9.2"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.33/dist/lenis.umd.min.js"></script>
+    <!-- <script src="https://unpkg.com/gsap@3.9.2"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/SCrollTrigger.min.js"></script> -->
+    <title>Index</title>
+</head>
+<body>
+    <img src="images/background.png" alt="" class="bg">
+    <img src="images/FirstHalf.png" alt="" class="logo1">
+    <img src="images/SecondHalf.png" alt="" class="logo2">
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="LOGO">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Core Team</a>
+            <a href="#">Join Now</a>
+
+        </nav>
+        <nav>
+            <i></i>
+        </nav>
+    </header>
+    <section class="home">
+        <p class="mainHeading">Tech Hood Agra</p>
+    </section>
+
+    <section class="two">
+        <h2 class="line1">all about the</h2>
+        <h2 class="line2">tech hood agra</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur ea ab, unde corrupti obcaecati optio explicabo cupiditate vel debitis animi possimus ratione quae facere reiciendis laboriosam tenetur dicta recusandae voluptatibus voluptate ex neque cum. Nesciunt voluptas velit fuga cum facere. Tempora animi libero facilis architecto optio nemo iste qui.</p>
+        <button>Learn More</button>
+        <img src="images/doodle1.png" alt="" class="doodle1">
+        <img src="images/doodle2.png" alt="" class="doodle2">
+    </section>
+    
+    <section class="three">
+        <h2 class="heading3">grow with community</h2>
+        <div class="three-container">
+            <img src="images/g1.png" alt="" class="g1">
+            <img src="images/g2.png" alt="" class="g2">
+            <img src="images/g3.png" alt="" class="g3">
+        </div>
+        <img src="images/doodle3.png" alt="" class="img1">
+        <img src="images/doodle5.png" alt="" class="img2">
+    </section>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        const lenis = new Lenis({})
+
+        function raf(time){
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+
+        gsap.from('.mainHeading', 1.5, {opacity:0, y: 50, ease: "power4.out", delay: 1.3})
+        gsap.from('.object', 1.5, {opacity:1, x: 150, ease: "power2.out", delay: 0.8})
+        gsap.from('.bubble1', 2.5, {opacity:0.5, y: 630, ease: "power3.out", delay: 1.2})
+        gsap.from('.bubble2', 2.5, {opacity:0.5, y: 670, ease: "power3.out", delay: 1.25})
+        gsap.from('.bubble3', 2.5, {opacity:0.5, y: 290, ease: "power3.out", delay: 1.3})
+        gsap.from('.bubble4', 2.5, {opacity:0.5, y: 400, ease: "power3.out", delay: 1.35})
+
+        var tl1 = gsap.timeline({scrollTrigger:{
+            trigger: ".two",
+            start: "15% 95%",
+            end: "55% 50%",
+            scrub: true,
+        }})
+        tl1.from('.line1', {x:"100%", ease:"pwer1.inOut"},'two')
+        tl1.from('.line2', {x:"-100%", ease:"pwer1.inOut"},'two')
+        tl1.from('.bubble5', {y:"150%", ease:"pwer1.inOut"},'two')
+        tl1.from('.bubble6', {y:"500%", ease:"pwer1.inOut"},'two')
+        tl1.from('.bubble7', {y:"1000%", ease:"pwer1.inOut"},'two')
+        tl1.from('.bubble8', {y:"1000%", ease:"pwer1.inOut"},'two')
+        tl1.to('.logo1', {rotate: 105, ease:"pwer1.inOut"},'two')
+        tl1.to('.logo2', {rotate: -105, ease:"pwer1.inOut"},'two')
+
+        var tl2 = gsap.timeline({scrollTrigger:{
+            trigger: ".three",
+            start: "15% 95%",
+            end: "55% 50%",
+            scrub: true,
+        }})
+        tl2.from('.heading3', {x:"-100%", ease:"pwer1.inOut"},'three')
+        tl2.from('.three-container', {x:"100%", ease:"pwer1.inOut"},'three')
+        tl2.from('.bubble9', {y:"150%", ease:"pwer1.inOut"},'three')
+        tl2.from('.bubble10', {y:"500%", ease:"pwer1.inOut"},'three')
+        tl2.from('.bubble11', {y:"1000%", ease:"pwer1.inOut"},'three')
+        tl2.from('.bubble12', {y:"1000%", ease:"pwer1.inOut"},'three')
+    </script>
+</body>
+</html>
